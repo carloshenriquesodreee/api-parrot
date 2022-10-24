@@ -12,7 +12,6 @@ export default {
             email: Sequelize.DataTypes.STRING,
             apartment: Sequelize.DataTypes.INTEGER,
             password: Sequelize.DataTypes.STRING,
-            estado: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE
             }

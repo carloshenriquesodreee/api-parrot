@@ -9,7 +9,6 @@ export default {
                 autoIncrement: true
             },
             content: Sequelize.DataTypes.STRING,
-            email: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
             user_id: {

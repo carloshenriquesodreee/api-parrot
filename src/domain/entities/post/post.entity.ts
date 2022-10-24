@@ -1,7 +1,5 @@
 export interface IPostEntity {
-    indexId?: number,
+    idpost: number,
     context: string,
     user_id: number,
-    updateAt: Date,
-    creadetAt: Date  
 };

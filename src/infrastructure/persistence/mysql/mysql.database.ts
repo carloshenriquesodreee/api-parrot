@@ -44,8 +44,8 @@ export class MysqlDatabase implements IDatabaseModel {
         return model.save();
     }
 
-    list(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, includes: object): any {
-        return model.findAll(includes);
+    list(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>): any {
+        return model.findAll();
     }
 
     async delete(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, dataWhere: Sequelize.WhereOptions<any>): Promise<any> {
@@ -56,9 +56,9 @@ export class MysqlDatabase implements IDatabaseModel {
         return (result > 0);
     }
 
-    read(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, dataId: number, includes: object): any {
+    read(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, dataId: number): any {
         try{
-            return model.findByPk(dataId, includes);
+            return model.findByPk(dataId);
         } catch(err){
             throw new Error((err as Error).message);
         }

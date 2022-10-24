@@ -1,7 +1,7 @@
 {
-  "name": "aula09-gama",
+  "name": "parrot",
   "version": "1.0.0",
-  "description": "Aula 06 da trilha de backend avançado da Gama, XP 44. Conectando a sua API com o MySQL.",
+  "description": "projeto parrot com sucesso ",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,19 +9,21 @@
     "debug": "set DEBUG=* && npm run start"
   },
   "keywords": [
-    "gama",
-    "aula06",
     "clean",
     "arquiteture",
     "ddd"
   ],
-  "author": "Erik Borges",
+  "author": "Carlos Henrique",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
     "@types/sequelize": "^4.28.14",
     "@types/supertest": "^2.0.12",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "express-winston": "^4.2.0",
     "multer": "^1.4.5-lts.1",
