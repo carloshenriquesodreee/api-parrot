@@ -6,13 +6,13 @@ export default function (user:any): IPostEntity | undefined {
 
     let posts : IPostEntity = {
         idpost: user.idpost,
-        context: user.context,
+        content: user.content,
         user_id: user.user_id,
     }
 
     if(user.logado){
         (posts  as IPostEntity).idpost = user.idpost;
-        (posts  as IPostEntity).context = user.context
+        (posts  as IPostEntity).content = user.content
         (posts  as IPostEntity).user_id = user.user_id;
     }
 

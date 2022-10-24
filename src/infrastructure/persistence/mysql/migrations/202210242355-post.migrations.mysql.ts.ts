@@ -2,7 +2,7 @@ import * as Sequelize from 'sequelize';
 
 export default {
     up: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.createTable('post', {
+        return queryInterface.createTable('posts', {
             idpost: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
@@ -11,11 +11,11 @@ export default {
             content: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
-            user_id: {
+            iduser: {
                 type: Sequelize.DataTypes.INTEGER,
                 references: {
                     model: {
-                        tableName: 'user'
+                        tableName: 'users'
                     },
                     key: 'iduser'
                 }

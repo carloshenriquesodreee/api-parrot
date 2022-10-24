@@ -1,5 +1,5 @@
 export interface IPostEntity {
     idpost: number,
-    context: string,
+    content: string,
     user_id: number,
 };

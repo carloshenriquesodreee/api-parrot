@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function default_1(user) {
     const posts = {
         idpost: user.idpost,
-        context: user.context,
+        content: user.content,
         user_id: user.user_id,
     };
     return {

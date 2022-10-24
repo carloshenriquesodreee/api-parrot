@@ -5,12 +5,12 @@ function default_1(user) {
         return;
     let posts = {
         idpost: user.idpost,
-        context: user.context,
+        content: user.content,
         user_id: user.user_id,
     };
     if (user.logado) {
         posts.idpost = user.idpost;
-        posts.context = user.context(posts).user_id = user.user_id;
+        posts.content = user.content(posts).user_id = user.user_id;
     }
     return posts;
 }

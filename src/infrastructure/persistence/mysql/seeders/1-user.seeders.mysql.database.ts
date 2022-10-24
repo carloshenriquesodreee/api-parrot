@@ -2,28 +2,25 @@ import * as Sequelize from 'sequelize';
 
 export default {
     up: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.bulkInsert('post', [
+        return queryInterface.bulkInsert('posts', [
             {
                 "idpost": 1,
                 "content": "blablabla",
-                "email": "carloshenriquedev@gmail.com",
-                "user_id": 1
+                "iduser": 1
             },
             {
                 "idpost": 2,
                 "content": "blablabla",
-                "email": "carloshenriquedev@gmail.com",
-                "user_id": 2
+                "iduser": 2
             },
             {
                 "idpost": 3,
                 "content": "blablabla",
-                "email": "carloshenriquedev@gmail.com",
-                "user_id": 3
+                "iduser": 3
             }
         ])
     },
     down: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.bulkDelete('post', {});
+        return queryInterface.bulkDelete('posts', {});
     }
 };
