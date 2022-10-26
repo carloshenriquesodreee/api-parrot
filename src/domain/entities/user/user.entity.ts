@@ -1,5 +1,5 @@
 export interface IUserEntity {
-    indexId: number,
+    iduser: number;
     name: string,
     email: string,
     password: string,

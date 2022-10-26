@@ -25,17 +25,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mysql_database_1 = require("../mysql.database");
 const Sequelize = __importStar(require("sequelize"));
-exports.default = mysql_database_1.MysqlDatabase.getInstance().createModel('post', {
-    indexId: {
+exports.default = mysql_database_1.MysqlDatabase.getInstance().createModel('users', {
+    iduser: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
-        field: 'iduser'
+        autoIncrement: true
     },
     name: Sequelize.DataTypes.STRING,
     email: Sequelize.DataTypes.STRING,
     apartment: Sequelize.DataTypes.INTEGER,
-    password: Sequelize.DataTypes.STRING,
-    createdAt: Sequelize.DataTypes.DATE,
-    updatedAt: Sequelize.DataTypes.DATE
+    password: Sequelize.DataTypes.STRING
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlci5tb2RlbHMubXlxbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9pbmZyYXN0cnVjdHVyZS9wZXJzaXN0ZW5jZS9teXNxbC9tb2RlbHMvdXNlci5tb2RlbHMubXlxbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsc0RBQWtEO0FBQ2xELHFEQUF1QztBQUV2QyxrQkFBZSw4QkFBYSxDQUFDLFdBQVcsRUFBRSxDQUFDLFdBQVcsQ0FBRyxNQUFNLEVBQUU7SUFDN0QsT0FBTyxFQUFFO1FBQ0wsSUFBSSxFQUFFLFNBQVMsQ0FBQyxTQUFTLENBQUMsT0FBTztRQUNqQyxVQUFVLEVBQUUsSUFBSTtRQUNoQixLQUFLLEVBQUUsUUFBUTtLQUNsQjtJQUNBLElBQUksRUFBRSxTQUFTLENBQUMsU0FBUyxDQUFDLE1BQU07SUFDaEMsS0FBSyxFQUFFLFNBQVMsQ0FBQyxTQUFTLENBQUMsTUFBTTtJQUNqQyxTQUFTLEVBQUUsU0FBUyxDQUFDLFNBQVMsQ0FBQyxPQUFPO0lBQ3RDLFFBQVEsRUFBRSxTQUFTLENBQUMsU0FBUyxDQUFDLE1BQU07SUFDcEMsU0FBUyxFQUFFLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSTtJQUNuQyxTQUFTLEVBQUUsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJO0NBRXZDLENBQUMsQ0FBQyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlci5tb2RlbHMubXlxbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9pbmZyYXN0cnVjdHVyZS9wZXJzaXN0ZW5jZS9teXNxbC9tb2RlbHMvdXNlci5tb2RlbHMubXlxbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsc0RBQWtEO0FBQ2xELHFEQUF1QztBQUV2QyxrQkFBZSw4QkFBYSxDQUFDLFdBQVcsRUFBRSxDQUFDLFdBQVcsQ0FBRyxPQUFPLEVBQUU7SUFDOUQsTUFBTSxFQUFFO1FBQ0osSUFBSSxFQUFFLFNBQVMsQ0FBQyxTQUFTLENBQUMsT0FBTztRQUNqQyxVQUFVLEVBQUUsSUFBSTtRQUNoQixhQUFhLEVBQUUsSUFBSTtLQUN0QjtJQUNBLElBQUksRUFBRSxTQUFTLENBQUMsU0FBUyxDQUFDLE1BQU07SUFDaEMsS0FBSyxFQUFFLFNBQVMsQ0FBQyxTQUFTLENBQUMsTUFBTTtJQUNqQyxTQUFTLEVBQUUsU0FBUyxDQUFDLFNBQVMsQ0FBQyxPQUFPO0lBQ3RDLFFBQVEsRUFBRSxTQUFTLENBQUMsU0FBUyxDQUFDLE1BQU07Q0FFeEMsQ0FBQyxDQUFDIn0=

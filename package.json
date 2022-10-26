@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
+    "start":"tsc && node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js concurrently \"npm run watch\" \"npm run server\"",
     "debug": "set DEBUG=* && npm run start"
   },
   "keywords": [

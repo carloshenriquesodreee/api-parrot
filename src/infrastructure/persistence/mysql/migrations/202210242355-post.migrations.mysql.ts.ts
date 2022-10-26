@@ -21,8 +21,8 @@ export default {
                 }
             }
         });
-    },
+    }, 
     down: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.dropTable('post');
+        return queryInterface.dropTable('posts');
     }
 }

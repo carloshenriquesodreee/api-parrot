@@ -1,16 +1,19 @@
 import { MysqlDatabase } from "../mysql.database";
 import * as Sequelize from 'sequelize';
 
-export default MysqlDatabase.getInstance().createModel ( 'post', {
-    indexId: {
+export default MysqlDatabase.getInstance().createModel ( 'posts', {
+    idpost: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
-        field: 'idpost'
+        autoIncrement: true
     },
     content: Sequelize.DataTypes.STRING,
-    email: Sequelize.DataTypes.STRING,
-    createdAt: Sequelize.DataTypes.DATE,
-    updatedAt: Sequelize.DataTypes.DATE,
-    user_id: Sequelize.DataTypes.INTEGER,
+    iduser: {
+        type: Sequelize.DataTypes.INTEGER,
+        references:{
+            model: "users",
+            key: "iduser"
+        }
+    }
         
 });

@@ -4,7 +4,8 @@ export default function (user: IPostEntity){
     const posts  = {
        idpost: user.idpost,
         content: user.content,
-        user_id: user.user_id,
+
+        iduser: user.iduser,
     }
 
     return {

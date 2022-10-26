@@ -1,9 +1,9 @@
-import { IUserEntity } from "../entities/user/user.entity";
+import { UserEntity } from "../entities/user/iuser.entity"
 
 export interface IUserRepository {
-    readById(resourceId: number): Promise<IUserEntity | undefined>,
-    create(resource: IUserEntity): Promise<IUserEntity>,
+    readById(resourceId: number): Promise<UserEntity | undefined>,
+    create(resource: UserEntity): Promise<UserEntity>,
     deleteById(resourceId: number): Promise<void>,
-    list(): Promise<IUserEntity[]>,
-    updateById(resource: IUserEntity): Promise<IUserEntity | undefined>
+    list(): Promise<UserEntity[]>,
+    updateById(resource: UserEntity): Promise<UserEntity | undefined>
 }

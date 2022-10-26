@@ -25,23 +25,25 @@ class PostController {
         log(post);
         res.status(201).send(post);
     }
-    async updatePosts(req: express.Request, res: express.Response){
-        const posts = await updatePostUsecase.execute(req.body);
-        try {
-            res.status(200).send(posts)
-        } catch (error) {
-            res.status(404).send("erro ao atualizar o usuário.")
-        }
+    async updatePost(req: express.Request, res: express.Response){
+        const post = await updatePostUsecase.execute(req.body);
+            res.status(200).send(post)
     }
 
-    async removePosts(req: express.Request, res: express.Response){
-        try {
-            await deletePostUsecase.execute({
-                idpost: Number(req.params.idpost)
-            });
-            res.status(204).send();
-        } catch (error) {
-            res.status(404).send("erro ao deletar o usuário.")
+    async removePost(req: express.Request, res: express.Response){
+        const post = await deletePostUsecase.execute({
+            idpost: Number(req.params.idpost),
+        });
+            res.status(204).send()
+        
+    }
+    async createPostBulk(req: express.Request, res: express.Response) {
+        let countUsers = 0;
+        for(countUsers = 0; countUsers < req.body.fileData.length; countUsers++){
+            await createPostUsecase.execute(req.body.fileData[countUsers]);
         }
+        res.status(201).send({
+            createdUsers: countUsers
+        });
 }}
 export default new PostController();

@@ -1,30 +1,29 @@
-import { CommonRoutesConfig } from "./common.routes.config";
-import postController from "../controllers/post.controller";
-import postMiddleware from "../middlewares/post.middleware";
 import express from "express";
+import postController from "../controllers/post.controller";
+// import { auth } from "../middlewares/auth.middleware";
+//import usersMiddlewares from "../middlewares/users.middlewares";
+import { CommonRoutesConfig } from "./common.routes.config";
 
-export class PostRoutes extends CommonRoutesConfig {
-    constructor(app: express.Application) {
-        super(app, 'PostRoutes');
+export class PostsRoutes extends CommonRoutesConfig{
+    constructor(app: express.Application){
+        super(app, 'PostsRoutes');
     }
 
     configureRoutes(): express.Application {
-        this.app.route(`/Post`)
-            .get(postController.listPost)
-            .post(
-                postMiddleware.validateRequiredPostBodyFields,
-                postMiddleware.validatePostRepeated,
-                postController.createPost
-            );
+        this.app.route(`/post`)
+        .post(//postMiddleware.validateRequiredPostBodyFields,
+           // postMiddleware.validatePostRepeated,
+            postController.createPost) 
 
-            this.app.route(`/post/:postid`)
-                        .all(postMiddleware.validatePostExists)
-                        .get(postController.getPostById)
-                        .put(
-                            postMiddleware.validateRequiredPostBodyFields,
-                            postController.updatePosts
-                        )
-                        .delete(postController.removePosts);
+        this.app.route(`/posts`)
+        .get( postController.listPost)
+
+        this.app.route(`/posts/:idpost`)
+        //.all(postMiddleware.validatePostExists)
+        .get(postController.getPostById)
+        .put(postController.updatePost)
+        .delete(postController.removePost);
+        
 
         return this.app;
     }

@@ -1,11 +1,13 @@
-import { IPostRepository } from "../../repositories/post.repository.interface";
+// import { IPostRepository } from "../../repositories/post.repository.interface";
 import { IUseCase } from "../usecase.interface";
+import { PostRepository } from "../../../adapters/repositories/post.repository";
+import { PostEntity } from "../../entities/post/ipost.entity";
 import postRepository from "../../../adapters/repositories/post.repository";
 
 
 class DeletePostUseCase implements IUseCase {
 
-    constructor(private _repository: IPostRepository) {
+    constructor(private _repository: PostRepository) {
 
     }
 

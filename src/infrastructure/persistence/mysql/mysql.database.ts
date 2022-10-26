@@ -44,8 +44,8 @@ export class MysqlDatabase implements IDatabaseModel {
         return model.save();
     }
 
-    list(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>): any {
-        return model.findAll();
+    list(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, includes?: object): any {
+        return model.findAll(includes);
     }
 
     async delete(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, dataWhere: Sequelize.WhereOptions<any>): Promise<any> {
@@ -69,8 +69,17 @@ export class MysqlDatabase implements IDatabaseModel {
             name,
             properties,
             {
-                timestamps: false
+                timestamps: true
             }
         )
+    }
+    async selectQuery(sql: string, replacements: any) {
+        return await this._adapter.query(
+            sql,
+            {
+                type: Sequelize.QueryTypes.SELECT,
+                replacements: replacements
+            }
+        );   
     }
 }
