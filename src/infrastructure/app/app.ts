@@ -8,6 +8,7 @@ import * as winston from "winston";
 import { CommonRoutesConfig } from '../../adapters/apis/routes/common.routes.config';
 import { PostsRoutes } from '../../adapters/apis/routes/post.routes.config';
 import { UserRoutes } from '../../adapters/apis/routes/user.routes.config';
+import { AuthRoutes } from '../../adapters/apis/routes/auth.routes.config';
 
 
 const app: express.Application = express();
@@ -37,6 +38,7 @@ app.use(expressWinston.logger(loggerOptions));
 
 routes.push(new PostsRoutes(app));
 routes.push(new UserRoutes(app));
+routes.push(new AuthRoutes(app));
 
 const runningMessage = `Servidor rodando na porta ${PORT}`;
 app.get('/', (req: express.Request, res: express.Response) => {

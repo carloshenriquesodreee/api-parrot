@@ -6,4 +6,5 @@ export interface IDatabaseModel extends IDatabase {
     read(type: any, dataId: number, includes?: object): any,
     list(type: any, includes?: object): any,
     selectQuery(sql: string, replacements: any): any
+    readByWhere(type: any, dataWhere: any): any
 }

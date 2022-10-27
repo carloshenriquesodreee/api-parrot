@@ -45,6 +45,18 @@ export class UsersRepository implements IUserRepository {
             await this._database.update(modelUser, users);
             return resource;
     }
+    async readByWhere(email: string, password: string): Promise<IUserEntity | undefined> {
+        try{
+            const users = await this._database.readByWhere(this._ModelUsers, {
+                email: email,
+                password: password
+            });
+            
+            return modelToEntitysUserMysqlDatabase(users);
+        } catch(err){
+            throw new Error((err as Error).message);
+        }
+    }
 }
 export default new UsersRepository(
     MysqlDatabase.getInstance(),

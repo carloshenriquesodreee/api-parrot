@@ -3,6 +3,7 @@ import userController from "../controllers/user.controller";
 // import { auth } from "../middlewares/auth.middleware";
 //import usersMiddlewares from "../middlewares/users.middlewares";
 import { CommonRoutesConfig } from "./common.routes.config";
+import authMiddleware from "../middlewares/auth.middleware";
 
 export class UserRoutes extends CommonRoutesConfig{
     constructor(app: express.Application){
@@ -15,11 +16,12 @@ export class UserRoutes extends CommonRoutesConfig{
               userController.createUser) 
 
         this.app.route(`/users`)
-        .get( userController.listUsers)
+        .get(authMiddleware.checkAuth, 
+             userController.listUsers)
 
         this.app.route(`/users/:iduser`)
-       // .all(usersMiddlewares.validateUserExists)
-        .get(userController.getUsersById)
+        .get(authMiddleware.checkAuth,
+            userController.getUsersById)
         .put( userController.updateUsers)
         .delete(userController.removeUsers);
         
