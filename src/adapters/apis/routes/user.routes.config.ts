@@ -16,12 +16,10 @@ export class UserRoutes extends CommonRoutesConfig{
               userController.createUser) 
 
         this.app.route(`/users`)
-        .get(authMiddleware.checkAuth, 
-             userController.listUsers)
+        .get(userController.listUsers)
 
         this.app.route(`/users/:iduser`)
-        .get(authMiddleware.checkAuth,
-            userController.getUsersById)
+        .get( userController.getUsersById)
         .put( userController.updateUsers)
         .delete(userController.removeUsers);
         
